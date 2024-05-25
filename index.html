@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUDS APP</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>cruds</h1>
+            <p>product management system</p>
+        </div>
+        <div class="inputData">
+            <input type="text" id="title" placeholder="title">
+            <div class="price">
+                <input type="number" onkeyup="getTotal()" id="price" placeholder="price">
+                <input type="number" onkeyup="getTotal()" id="taxes" placeholder="taxes">
+                <input type="number" onkeyup="getTotal()" id="ads" placeholder="ads">
+                <input type="number" onkeyup="getTotal()" id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category">
+            <button id="submit">Create</button>
+            <input onkeyup="searchValue(this.value)" type="text" id="search" placeholder="search">
+            <div class="search-btn">
+                <button onclick="getSearchMood(this.id)" id="search_btn_title">Search By Title</button>
+                <button onclick="getSearchMood(this.id)" id="search_btn_category">Search By Category</button>
+            </div>
+        </div>
+        <div class="outputData">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <button id="deleteAll" onclick="deleteAll()">delete All (<span id="number">0</span>)</button>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
